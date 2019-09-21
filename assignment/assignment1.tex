@@ -1,0 +1,43 @@
+\subsection{Assignment 1}
+
+\begin{exercise}
+1. Prove that $(0,1) :=\{x \in \bbR|0 < x < 1\}$ is bijective to $(0,1] :=\{x\in \bbR | 0< x\leq 1\}$.
+\end{exercise}
+
+\begin{proof}
+We extract a countable set $\{x|x=1/2^n,n\in \bbN^+ \}=\{1/2,1/2^2,1/2^3,\cdots\}$ first from $(0,1)$. Map $1/2$ to $1$, that is, $1/2^0$. Map $1/2^2$ to $1/2$, while $1/2^n$ is mapped to $1/2^{n-1}$. This is the map we need. While for other domain in $(0,1)$, just map them to themselves. 
+\end{proof}
+
+\begin{exercise}
+2. Let $S$ be a set. Prove that $S$ is not bijective to its power set $P(S)$.
+\end{exercise}
+\begin{proof}
+Firstly, we consider the case of finite element number. The proposition this question asked is right for empty set $\phi$. If the element number of set $S$ is $n$, then the element number of the power set $P(S)$ is $2^n$. They never equal.
+
+For the infinite case, \textit{Cantor's theorem}  directly makes the result.
+\end{proof}
+
+
+\begin{exercise}
+3. Define a relation $\sim $ on $\bbN\times\bbN$ as $(a, b)\sim(c, d)$ if and only if $a+d=c+b$. Prove that $\sim$ is an equivalence relation and write down a natural bijection between the the set of equivalence classes and Z.
+\end{exercise}
+\begin{proof}
+\textit{i.e.}, $a+d=c+b$ induces $a-b=c-d$.
+
+\begin{itemize}
+    \item If $(a,b)\in \bbN\times\bbN$, $(a,b)\sim(a,b)$ evidently.
+    \item If $(a, b)\sim(c, d)$, $a+d=c+b$. Naturally, $d+a=b+c$ and we have $(c, d)\sim(a, b)$.
+    \item If $(a, b)\sim(c, d)$, $(c, d)\sim(e, f)$, $a-b=c-d=e-f$. Of course, $(a, b)\sim(e, f)$.
+\end{itemize}
+
+All elements $(a,b)$ of the same equivalence class share a number $a-b\in\bbN$. Mapping the equivalence class directly to the number $a-b$ is a natural bijection.
+\end{proof}
+
+\begin{exercise}
+4. Let $V$ be a non-zero vector space over $\mathbb{R}$. Prove by \textit{Zorn's lemma}  that $V$ has a basis.
+\end{exercise}
+\begin{proof}
+We define the relation $\leq$ for the set of vectors simply by $\subset$ relation. $A=\{\text{some vectors}\} \leq B=\{\text{some vectors}\}$ as long as $A \subset B$. One may begin with a single element set $A_1=\{\vec{v_1}\}$ to try to span the whole space. If a vector in the vector space is not able to be spanned by the set $A_1$, one can always adds this vector to $A_1$ to make it $A_2=\{\vec{v_1},\vec{v_2}\}$. This compose a chain of set $A_1\leq A_2 \leq A_3 \cdots$, in which every $A_i$ is an element of partial order set $S$.  If there is not such a basis, which infers that infinite vectors are needed to represent all elements of the vector space, the vector appending procedure will never stop and the upper bound never appears. However, the appending is aborted by the limited dimension of vector space and then comes the upper bound of the chain.
+
+With different seed $\vec{v_1}$ and different choices of appended vectors, $S$ contains a lot of chain, of which they all have upper bounds. By applying the \textit{Zorn's lemma}, there must be the maximal set of basis vectors, which is the real basis for the whole space. 
+\end{proof}
