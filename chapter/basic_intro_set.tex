@@ -1,0 +1,125 @@
+
+
+\subsection{Constructions of sets}
+
+\begin{enumerate}
+    \item Given a set $S$. The power set $P(S)$ of $S$ is defined to be the set of all subsets of $S$. \textit{E.g.},
+    $S = \{1, 2, 3\}$, $P(S) = \{\emptyset, \{1\}, \{2\}, \{3\}, \{1, 2\}, \{1, 3\}, \{2, 3\}, \{1, 2, 3\}\}$.
+    \item  Let I be a non-empty set and for each $i \in I$, one has a set $A_i$ Then one can define
+    \begin{itemize}
+        \item $\bigcap_{i \in I} A_{i}$, the \textcolor{purple}{\textit{intersection}} of all sets $A_{i}$.
+        \item $\bigcup_{i \in I} A_{i}$, the \textcolor{purple}{\textit{union}} of all sets $A_{i}$.
+        \item $\prod_{i \in I} A_{i}$, the \textcolor{purple}{\textit{Cartesian product}} of all sets $A_{i}$.
+    \end{itemize}
+\end{enumerate}
+
+\begin{definition}
+    Let $A$ and $B$ be two non-empty sets. A function $f : A \rightarrow B$ is a rule that assigns to every
+    element $a$ of $A$ a unique element $b$ of $B$. Equivalently, the function $f$ can be described
+    as a subset $\Gamma \subset A \times B$ satisfying the following conditions:
+    \begin{enumerate}
+        \item $\forall a \in A$, $\in b \in B$ such that $(a, b) \in \Gamma$;
+        \item if $(a, b)$ and $(a, b^{\prime})$ belong to $\Gamma$, then $b = b$
+    \end{enumerate}
+\end{definition}
+
+
+Given a function $f : A \rightarrow B$, one can talk about whether $f$ is injective, surjective,
+bijective, inverse function of $f$ (if bijective), images and preimages.
+
+Given two functions $f : A \rightarrow B$ and $g : B \rightarrow C$, one can define the composition function
+$g \circ f : A \rightarrow C$ that maps a to $g(f(a))$.
+
+\begin{lemma}
+    Any set $S$ is not bijective to its power set $P(S)$.
+\end{lemma}
+
+\subsection{Equivalence relations}
+\begin{definition}
+    Let $S$ be a non-empty set. A \textcolor{purple}{\textit{relation $\sim$ on $S$}} is defined by a subset $R \subset  S \times  S$ in
+the following sense: we say $a \sim b$ iff $(a, b) \in R$. A set $S$ equipped with a relation $\sim$ is
+denoted by $(S, \sim)$.
+\end{definition}
+
+\begin{definition}
+Given $(S, \sim)$, the relation $\sim$ is said to be an \textcolor{purple}{\textit{equivalence relation}} if the following conditions
+hold:
+\begin{enumerate}
+    \item $\forall x \in S$, $x \sim x$ (reflexive);
+    \item if $x \sim y$, then $y \sim x$ (symmetric);
+    \item if $x \sim y$ and $y \sim z$, then $x \sim z$ (transitive).
+\end{enumerate}
+
+\end{definition}
+
+
+
+
+If $S$ is equipped with an equivalence relation $\sim$ and $x, y \in S$, we say x is equivalent to
+$y$ if $x \sim y$. The subset $[x] := \{y \in S| y \sim x\}$ of $S$ consisting of all elements equivalent
+to $x$ is called the equivalence class of $x$. The set of all equivalence classes is denoted by
+$S/ \sim$.
+
+Equivalence relations occur everywhere, \textit{e.g.}, one can define an equivalence relation on
+$Z$ by saying that $m \sim n$ if $m - n$ is divisible by $2$, in this case there are two equivalence
+classes: the class of even numbers and the class of odd numbers. Another example, let
+$S$ be the set of Chinese people and we define two Chinese $x$ and $y$ to be equivalent iff
+$x$ and $y$ have the same surname, in this case the equivalence classes correspond to the
+surnames of Chinese.
+
+\begin{lemma}
+A fundamental FACT about equivalence relation $(S, \sim): \forall x, y \in S$, either $[x] = [y]$ or
+$[x] \bigcap [y] = \emptyset$. This fact implies that $S$ is the disjoint union of (or partitioned by) the
+equivalence classes of S. Equivalently, one can defines an equivalence relation $\sim$ on $S$ by
+partitioning $S$ into disjoint non-empty subsets and saying that $ x \sim y$ iff $x$ and $y$ belong
+to the same partition.
+\end{lemma}
+
+Given $S$ with equivalence relation $\sim$, one has a natural (surjective) function $\pi: S \rightarrow S/ \sim$
+mapping $x \in S$ to $[x] \in S/ \sim$.
+
+\subsection{Partial Order Set and \textit{Zorn's Lemma}}
+
+\begin{definition}
+    Let $S$ be a set equipped with a relation $\leq$. We say that $(S, \leq)$ is a \textcolor{purple}{\textit{partial order set}} if
+    the following conditions hold:
+    \begin{enumerate}
+        \item $\forall x \in S$, $x \leq x$;
+        \item if $x \leq  y$ and $y \leq  x$, then $x = y$;
+        \item if $x \leq  y$ and $y \leq  z$, then $x \leq z$.
+    \end{enumerate}
+
+\end{definition}
+
+\begin{definition}
+A partial order set $(S, \leq )$ is said to be a \textcolor{purple}{\textit{total order set}} if $\forall x, y \in S$, either $x \leq  y$ or
+    $y \leq  x$ holds.
+\end{definition}
+
+\begin{example}
+    Given a set $S$, then $(P(S), \subset )$ is a partial order set (but not a total order set in general).
+\end{example}
+
+\begin{definition}
+    \textbf{Chain, Upper Bound and Maximal Element}\\
+    \begin{enumerate}
+        \item Given a partial order set $(S, \leq )$, a subset $C \subset  S$ is called a \textcolor{purple}{\textit{chain}} if $\forall x, y \in C$ either
+        $x \leq  y $or $y \leq  x$ holds.
+        
+        \item Given a partial order set $(S, \leq )$ and a subset $T \subset  S$, an element $x \in S$ is called an \textcolor{purple}{\textit{upper
+        bound}} of $T$ if$ \forall y \in T$, $y \leq  x$ holds.
+        
+        \item Given a partial order set $(S, \leq )$, an element $x \in S$ is called a \textcolor{purple}{\textit{maximal element}} if there
+        does not exist $y \in S $ such that $x \leq  y$ and $y = x$. Remark: $(S, \leq )$ can have multiple
+        maximal elements.
+    \end{enumerate}
+\end{definition}
+
+
+\begin{lemma}
+\textcolor{purple}{\textbf{Zorn’s lemma}}\\
+ Let $(S, \leq )$ be a partial order set. If every chain $C \subset  S$ has an upper
+bound in $S$, then $S$ has a maximal element.
+
+One can prove by \textit{Zorn’s lemma} that every non-zero vector space has a basis.
+\end{lemma}

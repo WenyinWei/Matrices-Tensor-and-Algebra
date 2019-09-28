@@ -1,0 +1,118 @@
+
+
+\subsection{Group Theory 1}
+\subsubsection{Groups and subgroups}.
+\begin{definition}
+    A \emph{group} is a non-empty set G together with a binary operation $G \times G \rightarrow G$ (called
+“multiplication” or “group law”) that sends $(g_1, g_2)$ to $ g_1 \cdot g_2$ (or omitting the $\cdot$ and just
+write $g_1g_2$ for simplicity) such that the following axioms are satisfied.
+
+(i) (Associativity): $g_1(g_2g_3) = (g_1 g_2)g_3$ for $\forall g_1, g_2, g_3 \in G$.
+
+(ii) (Existence of identity): $\exists e \in G$ such that $eg = g = ge, \forall g \in G$.
+
+(iii) (Existence of inverse): $\forall g \in G$, $\exists h \in G$ such that $gh = e = hg$.
+\end{definition}
+
+\begin{remark}
+    A few remarks about this notion.
+
+    (a) Associativity allows us to “remove the brackets”: $g_1(g_2g_3)$ can simply be represented by $g_1g_2g_3$.
+
+(b) If both $e$ and $e^{\prime}$
+satisfy axiom (ii), then $e = ee^{\prime} = e^{\prime}$. Thus $e$ is unique and is called
+the identity element.
+
+(c) The element $h$ in axiom (iii) is uniquely determined by $g$: if both $h$ and $h^{\prime}$ satisfy (iii) for $g$, then we obtain $gh = e \Rightarrow h^{\prime}gh=h^{\prime}\Rightarrow eh=h^{\prime}\Rightarrow h=h^{\prime}$. Hence, it makes
+sense to say that $h$ is the inverse element of $g$ and write it as $g^{\prime}$
+
+(d) Suppose we fix two elements $g,h \in G$ and let $x$ be a "variable" in $G$. THen the equation $gx=g$ (resp. $xg=h$) has a unique solution $x = g^{-1}h$ (resp. $hg^{-1}$).
+
+(e) Fix $g \in G$ and define a map (left multiplication by $g$) $L_g : G \Rightarrow G$ such that $h \mapsto gh$.
+By (d), this map is a bijection from G to itself. Similarly, the right multiplication
+by $g$ map $R_g : G \rightarrow G$ is also bijective.
+\end{remark}
+
+\begin{definition}
+    A subset $H \subset G$ is called a \emph{subgroup} of $G$, denoted $H \leq G$, if the following conditions hold. 
+    \begin{enumerate}
+        \item (Closed under multiplication): $h_1h_2 \in H$, $\forall h_1,h_2 \in H$.
+        \item (Existence of identity): $e \in H$.
+        \item (Existence of inverse): $\forall h \in H$, the inverse $h^{-1}\in H$.
+    \end{enumerate}
+\end{definition}
+
+\begin{example}
+    Examples of groups and subgroups:
+    \begin{enumerate}
+        \item Group with one element: $\{e\}$.
+        \item Under usual addition law: $\{0\} \leq 4\bbZ \leq 2\bbZ \leq \bbZ \leq \bbQ \leq \bbR \leq \bbC$.
+        \item Residue classes $a$ (mod $n$) under usual addition law: $\bbZ / n\bbZ$.
+        \item Residue classes $a$ (mod $n$) such that $(a, n) = 1$ under usual multiplication law:
+        $(\bbZ/n\bbZ)^{*}$.
+        \item Fix $n \in \bbN$, invertible matrices under matrix multiplication: $\mathrm{GL}_n(\bbQ) \leq \mathrm{GL}_n(\bbR) \leq \mathrm{GL}_n(\bbC) $. When $n=1$, we obtain $\bbQ^* \leq \bbR^* \leq \bbC^*$ under usual number multiplication.
+        \item Let $\Sigma$ be a non-empty set and $Perm(\Sigma)$ be the set of bijective functions from $\Sigma$ to itself. Then $Perm(\Sigma)$ is group with group law given by composition of functions:
+        $$
+        f \cdot g :=f \circ g : \Sigma \stackrel{g}{\rightarrow} \Sigma \stackrel{f}{\rightarrow} \Sigma
+        $$
+        If $\Sigma = \{1,2,\dots,n\}$, then define $S_n := Perm(\Sigma)$ and call it the symmetric group of $n$ elements.
+        \item Sometimes, it is helpful to treat a group $G$ as a subgroup of $Perm(\Sigma)$ for some set $\Sigma$ since it provides an angle to better understand G, \textit{e.g.}, $\mathrm{GL}_n(\bbC)\leq Perm(\bbC^n)$. In general, we may view G as a subgroup of $Perm(G)$ where we view $g \in G$ as $L_g \in Perm(G)~ \forall g \in G$ (or $R_g \in Perm(G)~ \forall g \in G$). If $G$ is a finite group of $n$ elements, $G$ may be viewed as a subgroup of $S_n$. This point of view will be more apparent after the introduction of the terms "monomorphism, isomorephism,...".
+
+    \end{enumerate}
+\end{example}
+
+Let $G$ be a group and $g\in G$. Here are some definitions:
+\begin{definition}
+\begin{enumerate}
+    \item The \emph{size of the group}, denoted \emph{$|G|$}, is called \emph{the order of the $G$}. The group $G$ is called a finite group if $|G| < \infty$; otherwise, G is an infinite group.
+    \item We define $g^n$ for all cases $n\in \bbZ$: if $n=0$, $g^n =e$; if $n>0$, $g^n =gg\cdots g$ (product of n terms); if $n<0$, $g^n = g^{-1}g^{-1}\cdots g^{-1}$ (product of $-n$ terms).
+    \item If there exists $n \in N$ such that $g^n = e$ , then the smallest such $n$ is called \emph{the order (or period) of $g$}, denoted \emph{$ord(g)$} or \emph{$o(g)$}. If no such n exists, then $ord(g)$ is defined to be $\infty$.
+    \item \textbf{Fact.} If $G$ is finite, then $ord(g)$ is finite. (We will see later that $ord(g)$ divides $|G|$.) Proof. Since the subset $\{ g^n : n \in \bbN \} \subset G$ is finite, for some natural numbers $m>n$ we have $g^m=g^n$, which implies $g^{m-n}=e$.
+    \item Let $S \subset G$ be non-empty. The subgroup of $G$ generated by $S$ is defined to be: $$
+    <S>:=\left\{s_{1}^{k_{1}} s_{2}^{k_{2}} \cdots s_{n}^{k_{n}} | n \in \mathbb{N}, s_{1}, \ldots, s_{n} \in S, k_{1}, k_{2}, \ldots, k_{n} \in \mathbb{Z}\right\}
+    $$ Check that this defines a subgroup!
+    \item If $S$ has only one element $g$, write $<S>=<g>$ for simplicity. Check that $ord(g)=|<g>|$
+\end{enumerate}
+\end{definition} 
+
+\subsection{Cosets and Lagrange's Theorem}
+Let $H$ be a subgroup of a group $G$ and $g \in G$. The subset $gH := \{gh|h\in H\}\subset G$ is called a left coset (of H) with respect to $g$. The set of left cosets is denoted $G/H=\{gH|g\in G\}$ and the size $|G/H|$ is called the index of H (can be $\infty$). Of course, left cosets with respect to different g may coincide. Similarly, one can define right cosets of H and the set of right cosets is denoted $H\backslash G$.
+
+The map $L_g: H\Rightarrow gH$ is bijective. If $G$ is finite, then $gH$ and $Hg$ are both finite sets. 
+
+\textbf{Fact.} Every element $g\in G$ belongs to a left coset and $\forall g_1,g_2 \in G$, either $g_1 H \bigcap g_2H =\emptyset$ or $g_1 H =g_2 H$.
+
+Proof. First $g =ge\in gH$. Second, if $g_1 H \bigcap g _2 H\neq\emptyset$, then there exists $h_1,h_2\in H$ such that $g_1h_1=g_2h_2\Rightarrow g_1=g_2h_2h_1^{-1}\in g_2H\Rightarrow g_1H\subset g_2H$ (since $H$ is closed under multiplication); similarly we have $g_2 H \subset g_1 H$.
+
+
+\begin{theorem}
+    Lagrange's Theorem
+
+    If $H$ is a subgroup of a finite group $G$, then $|H|$ divides $|G|$.  
+\end{theorem}
+
+\begin{proof}
+    By the above fact, $G$ is partitioned by the left cosets, that is, $G$ is a disjoint union of the left cosets: 
+    $$    G=\bigcup_{g H \in G / H} g H    $$
+    Then (2) above implies that $|G|=|H| \times|G / H|$.
+\end{proof}
+
+\begin{remark}
+    The whole proof can be done with right cosets.
+
+    The partition on G by left cosets actually comes from an equivalence relation: we say 
+     $g_1 \sim g_2$ iff $g_1^{-1}g_2 \in H$.
+\end{remark}
+
+\begin{lemma}
+    \emph{Corollaries of Lagrange's Theorem}
+
+    Let $G$ be a finite group. 
+    \begin{enumerate}
+        \item If $|G|$ is a prime number, then $\{e\}$ and $G$ are the only subgroups of $G$.
+        \item If $g \in G$, then $ord(g)$ divides |G|.
+        \item If $g \in G$, then $g^{|G|}=e$.
+        \item \emph{Fermat's little theorem}: take $G = (\bbZ/p\bbZ)^*$ and use (c)
+        \item \emph{Euler's theorem}: take $G = (\bbZ/N\bbZ)^*$ and use (c)
+    \end{enumerate}
+\end{lemma}

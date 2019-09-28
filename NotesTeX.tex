@@ -1,7 +1,22 @@
 \documentclass[10pt]{article}
-\pdfoutput=1
+% \pdfoutput=1
 \usepackage{NotesTeX,lipsum}
 %\usepackage{showframe}
+
+\usepackage{xcolor}
+\renewcommand{\emph}[1]{\textcolor{purple}{\textit{#1}}}
+% Too large line blank between neighboring lines.
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\usepackage{xeCJK}
+\setCJKmainfont[BoldFont=SimHei]{SimSun}
+\setCJKfamilyfont{hei}{SimHei}
+\setCJKfamilyfont{kai}{KaiTi}
+\setCJKfamilyfont{fang}{FangSong}
+\newcommand{\hei}{\CJKfamily{hei}}
+\newcommand{\kai}{\CJKfamily{kai}}
+\newcommand{\fang}{\CJKfamily{fang}}
 
 \title{\begin{center}{\Huge \textit{Matrices, Tensor and Algebra}}\end{center}}
 \author{Wenyin Wei\footnote{\href{https://wenyin.xyz/}{\textit{My Personal Website}}}}
@@ -20,9 +35,14 @@ Department of Engineering Physics
 	\newpage
 	\pagestyle{fancynotes}
 
-	% \part{Assignment}
+	% \part{Algebra}
+	% The part mainly comes from the notes of Prof. 许俊彦 2019 清华 抽象代数。
+	% \section{Basics of Set Theory}
+	% \input{chapter/basic_intro_set.tex}
+	% \input{chapter/group_theory_1.tex}
 	\section{Assignment}
-	\input{assignment/assignment1.tex}
+	% \input{assignment/assignment1.tex}
+	\input{assignment/assignment2.tex}
 
 
 
