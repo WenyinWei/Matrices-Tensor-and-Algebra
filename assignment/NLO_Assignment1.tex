@@ -1,0 +1,80 @@
+\subsection{Tensor Basics, Nonlinear Optics Appendix}
+
+\begin{exercise}
+新坐标系为老坐标系绕 $x3$ 轴转 $\phi$ 角而成. 求二阶张量 $T_{ij}$ 在新、老坐标系中的变换关系.
+
+\end{exercise}
+
+\begin{proof}
+    To acquire the transformation relation of dyadics under rotation angle $\phi$ around the $x3$ axis. Only the transformation parameters $\alpha_{ij}$ are needed. 
+    
+    $$
+    \alpha_{i j}=\hat{e}_{i}^{\prime} \cdot \hat{e}_{j}=\cos \left(i^{\prime}, j\right)
+    $$
+
+    $$
+    \alpha_{1 1}=\cos (1^{\prime}, 1)=\cos (\phi) = \alpha_{2 2}, \alpha_{3 3} =1
+    $$
+    
+    $$
+    \alpha_{1 2}=\cos (1^{\prime}, 2)=\cos (\pi/2-\phi) = \sin (\phi)
+    $$
+
+    $$
+    \alpha_{2 1}=\cos (2^{\prime}, 1)=\cos (\pi/2+\phi) = -\sin (\phi)
+    $$
+
+    $$
+    \alpha =
+    \left ( 
+        \begin{matrix}
+        \cos (\phi) & \sin (\phi) & 0\\
+        -\sin (\phi) & \cos (\phi) & 0\\
+        0 & 0 & 1 \\
+        \end{matrix}
+    \right )
+    $$
+
+    To do the dyadics transform, one need the following formula,
+    $$
+    T_{i j}^{\prime}=\alpha_{i k} \alpha_{j l} T_{k l}
+    $$.
+\end{proof}
+
+\begin{exercise}
+    证明,任意二阶张量 $T_{ij}$ 皆可表示为二阶对称张量与二阶反对称张量之和.
+\end{exercise}
+
+\begin{proof}
+    The symmetric- and antisymmetric two-order tensor can be constructed by the following formula.
+
+    $$ S = (T + T^{T})/2 $$
+    $$ A = (T - T^{T})/2 $$
+    $$ T = S+A $$
+
+    We use matrix symbol here to show the kernel consisely.
+
+\end{proof}
+
+\begin{exercise}
+    证明,任意二阶对称张量 $T_{ij}$ 可分解为一个与张量 $\delta_{ij}$ 成比例的对称张量及一个跡为零的对称张量之和.
+
+    
+    To prove that such a decomposition is possible, 
+
+    $$ T = kI + S$$,
+    
+    where $T$ is a symmetric tensor while $S$ is even a symmetric one with trace zero.
+\end{exercise}
+
+\begin{proof}
+
+    We know from the symmetric characteristc that the decomposition only concerns the elements on the diagonal line, $T_{11},T_{22},T_{33}$.
+
+    $$S_{ii}=T_{ii}-k \text{, respectively.}$$
+
+    To make $S_{11}+S_{22}+S_{33}=0$, let $k=(T_{11}+T_{22}+T_{33})/3$.
+
+    We use matrix symbol here to show the kernel consisely.
+    
+\end{proof}

@@ -1,0 +1,30 @@
+\usepackage{xcolor}
+\renewcommand{\emph}[1]{\textcolor{purple}{\textit{#1}}}
+% Too large line blank between neighboring lines.
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\usepackage{xeCJK}
+\setCJKmainfont[BoldFont=SimHei]{SimSun}
+\setCJKfamilyfont{hei}{SimHei}
+\setCJKfamilyfont{kai}{KaiTi}
+\setCJKfamilyfont{fang}{FangSong}
+\newcommand{\hei}{\CJKfamily{hei}}
+\newcommand{\kai}{\CJKfamily{kai}}
+\newcommand{\fang}{\CJKfamily{fang}}
+
+\newcommand\Vect{\symbfup}
+\newcommand\Matr{\symbfit} % \matrix is defined in LaTeX2e kernel
+\newcommand\Tens{\symbfsfit}
+
+\usepackage[super]{nth} % 1st, 2nd, ...
+
+
+% \usepackage[math-style=ISO]{unicode-math} % XeTeX driver only supports unicode.  (hyperref)  Enabling option `unicode'. 
+% Sometimes pasted texts may contain unicode math symbols which may cause compiling errors, the package is capable to help you skip those trivial errors caused by compiling those symbols which used to be uncompilable properly.
+
+\usepackage{etoolbox}
+\newbool{isBeamer} 
+% \booltrue{isBeamer}
+\boolfalse{isBeamer}
+% \ifbool{isBeamer}{<true>}{<false>}

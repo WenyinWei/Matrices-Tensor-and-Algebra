@@ -1,0 +1,167 @@
+\subsection{Tensor Basics, Nonlinear Optics Appendix}
+
+\begin{exercise}
+
+1.   当介质中输入 $\omega_1, \omega_2$ 两束光时，写出所有可能频率的三阶非线性极化强度的表示式.(已知 $2\omega_2>\omega_1>\omega_2$)负频成分不写.
+
+\end{exercise}
+
+\begin{proof}
+$$P(3\omega_1)=\epsilon_0 \chi^{(3)}E_1^3$$
+$$P(3\omega_2)=\epsilon_0 \chi^{(3)}E_2^3$$
+$$P(2\omega_1+\omega_2)=
+\epsilon_0 \chi^{(3)} 3E_1^2E_2$$
+$$P(2\omega_2+\omega_1)=
+\epsilon_0 \chi^{(3)} 3E_1E_2^2$$
+$$P(2\omega_1-\omega_2)=
+\epsilon_0 \chi^{(3)} 3E_1^2E_2^*$$
+$$P(2\omega_2-\omega_1)=
+\epsilon_0 \chi^{(3)} 3E_1^*E_2^2$$
+$$P(\omega_1)=\epsilon_0 \chi^{(3)}(3E_1E_1^{*}+6E_2 E_2^*)E_1$$
+$$P(\omega_2)=\epsilon_0 \chi^{(3)}(6E_1E_1^{*}+3E_2 E_2^*)E_2$$
+\end{proof}
+
+\begin{exercise}
+2. 在介质中加一恒定电场 $E_0$ 再输入一束频率为 $\omega$ 的激光，写出频率为 $\omega$ 的二阶非线性极化强度和三阶非线性极化强度的表示式。
+\end{exercise}
+
+
+\begin{proof}
+$$
+\vec{P}^{(2)}\left(\omega_{\sigma}\right)=\frac{\varepsilon_{0}}{2} \sum_{(\alpha, \beta)} \vec{\chi}^{(2)}\left(-\omega_{\sigma} ; \omega_{\alpha}, \omega_{\beta}\right): \vec{E}\left(\omega_{\alpha}\right) \vec{E}\left(\omega_{\beta}\right)
+$$
+
+$$
+\begin{aligned} \vec{E}(z, t) &=\frac{1}{2} \vec{E}_{0}+\frac{1}{2} \vec{E}(z ; w) e^{-i w t}+a c \\ &=\vec{E}_{0}+\frac{1}{2} \vec{E}(z ; w) e^{-i w t}+\frac{1}{2} \vec{E}^{*}(z ; w) e^{i \omega t} \end{aligned}
+$$
+
+
+$$
+\vec{P}^{(2)}\left(\omega\right)=\varepsilon_{0} \vec{\chi}^{(2)}\left(-\omega ; \omega, 0 \right): \vec{E}\left(\omega\right) \vec{E}\left(0\right) + \varepsilon_{0} \vec{\chi}^{(2)}\left(-\omega ; 0, \omega \right): \vec{E}\left(0\right) \vec{E}\left(\omega\right)
+$$
+
+$$
+\begin{aligned}
+\vec{P}^{(3)}\left(\omega\right)&= 2\varepsilon_{0} \vec{\chi}^{(3)}\left(-\omega ; \omega, 0 ,0 \right): \vec{E}\left(\omega\right) \vec{E}\left(0\right)  \vec{E}\left(0\right)\\ & +2\varepsilon_{0} \vec{\chi}^{(3)}\left(-\omega ; 0, \omega, 0 \right): \vec{E}\left(0\right) \vec{E}\left(\omega\right)  \vec{E}\left(0\right)\\ &+2\varepsilon_{0} \vec{\chi}^{(3)}\left(-\omega ; 0,0,\omega \right): \vec{E}\left(0\right) \vec{E}\left(0\right)  \vec{E}\left(\omega\right)
+\end{aligned}
+$$
+\end{proof}
+
+\begin{exercise}
+
+3. 证明在Kleinman 对称性成立时，独立的二阶非线性极化率元素由27个减少到10个，三阶非线性极化率元素由81个减少到15个。
+\end{exercise}
+
+
+\begin{proof}
+二阶的情况相当于三个元素插两块挡板分开，第一块挡板左边的元素数量是 1 的数量，两块挡板之间的元素数量是 2 的数量， 第二块挡板之后的是 3 的数量。
+$$\bullet ||\bullet \bullet$$
+
+两块板可以插在一个地方，也可以插在两个地方，共 $C_4^1+C_4^2=10$ 种。
+
+三阶的类似， $C_5^1+C_5^2=15$ 种。
+
+$$\bullet |\bullet \bullet |\bullet$$
+\end{proof}
+
+\begin{exercise}
+
+4.   证明各向同性介质，三阶非线性极化率 $\chi_{ijkl}^{(3)}$ 有下列关系：\\
+1111=2222=3333\\
+2233=3322=3311=1133=1122=2211\\
+2323=3232=3131=1313=1212=2121\\
+2332=3223=3113=1331=1221=2112\\
+1111=1122+1212+1221\\
+其余元素为零. 
+\end{exercise}
+
+\begin{proof}
+由各向同性，1111=2222=3333 显然，三个波不管从什么方向一同入射，由于各向同性，在同一方向出射的波都应该是一样的。\\
+中间的这三个等式可以通过各个方向是无法区分的来获得，由于 1，2，3 这三个方向是无法区分的。3311=3322，说明 1 和 2 方向是无法区分的；2233=2211 说明 3 和 1 是无法区分的，再者，依次类推，以下三个等式成立。 \\
+每一行的共同特点是相同元素在排列中的顺序是一样的。比如\\
+第二行$\circ\circ\bullet\bullet$,  2233=3322=3311=1133=1122=2211\\
+第三行$\circ\bullet\circ\bullet$,  2323=3232=3131=1313=1212=2121\\
+第四行$\circ\bullet\bullet\circ$,  2332=3223=3113=1331=1221=2112\\
+\\ 
+
+1111=1122+1212+1221\\
+其余元素为零. 也就是 $\circ\bullet\bullet\bullet$, 这种一比三的序列组合的，我还没猜到它们的原因.
+\end{proof}
+
+\begin{exercise}
+
+5. 当介质中同方向输入 $\omega_1,\omega_2$ 两束光时，求频率为 $\omega = \omega_1-\omega_2$ 的二阶非线性极化波的波矢及频率为 $2\omega_1-\omega_2$ 的三阶非线性极化波的波矢。当两束光反方向输入时，又如何？
+\end{exercise}
+
+\begin{proof}
+波矢大小分别为 
+
+$$k=\frac{\omega_1-\omega_2}{c}n(\omega_1-\omega_2), k=\frac{2\omega_1-\omega_2}{c}n(2\omega_1-\omega_2)$$
+
+方向我不太确定，可能会随光束方向反过来？
+\end{proof}
+
+
+\begin{exercise}
+6.  设频率为 $\omega_\alpha$ 的平面单色波,其传播方向 $\vec{k}_{\alpha}$ 与 $z$ 轴成 $\theta$ 角, 证明沿 $z$ 方向的耦合波方程可写成  $$\frac{d}{d z} A_{\alpha}(z)=\frac{i \mu_{0} \omega_{\alpha}^{2}}{2 k_{\alpha} \cos \theta} \hat{e}_{\alpha} \cdot \vec{P}^{N L}\left(z ; \omega_{\alpha}\right) e^{-i k_{\alpha} \cos \theta z}$$.
+\end{exercise}
+
+\begin{proof}
+    该题在原有的耦合波方程上，
+    $$\frac{d}{d z} A_{\alpha}(z)=\frac{i \mu_{0} \omega_{\alpha}^{2}}{2 k_{\alpha} } \hat{e}_{\alpha} \cdot \vec{P}^{N L}\left(z ; \omega_{\alpha}\right) e^{-i k_{\alpha} z}$$
+    将 $k_{\alpha}$ 替换为因角度偏移导致的等效波矢 $k_{\alpha} \cos \theta$ 即可。
+\end{proof}
+
+\begin{exercise}
+
+7.  设频率为 的平面单色光波使得介质产生线性吸收，证明对于此光波的耦合波方程可表示为      
+式中 $\alpha_1$ 是介质在 $\omega_1$ 处的线性吸收系数，$\alpha=\frac{\omega_{1}}{c n\left(\omega_{1}\right)} \chi^{(1)}\left(\omega_{1}\right)^{\prime \prime}$,\\
+而波矢 $k_{1}=\frac{\omega_{1}}{c} n\left(\omega_{1}\right)$, $n\left(\omega_{1}\right) \cong\left(1+\chi^{(1)}\left(\omega_{1}\right)^{\prime}\right)^{1 / 2}$。\\
+$\chi^{(1)}\left(\omega_{1}\right)^{\prime}, \chi^{(1)}\left(\omega_{1}\right)^{\prime \prime}$ 分别是线性极化率的实部和虚部。
+\end{exercise}
+
+\begin{proof}
+
+注意讲义中在推导定态耦合波方程过程中的 (2) 式：
+$$
+\frac{d^{2}}{d z^{2}} \vec{E}\left(z ; \omega_{\alpha}\right)+\frac{\omega_{\alpha}^{2}}{c^{2}} \varepsilon_{r}^{L} \vec{E}\left(z ; \omega_{\alpha}\right)=-\mu_{0} \omega_{\alpha}^{2} \vec{P}^{N L}\left(z ; \omega_{\alpha}\right)
+$$
+
+注意上式等号左侧的第二项，$\varepsilon_{r}^{L}=1+\chi^{(1)}(\omega)^\prime+\chi^{(1)}(\omega)^{\prime\prime}$.我们将重点放在其虚数部分。
+$$\frac{\omega_{\alpha}^{2}}{c^{2}} \chi^{(1)}(\omega)^{\prime\prime} \vec{E}\left(z ; \omega_{\alpha}\right)=\frac{\omega_{\alpha}^{2}}{c^{2}} \chi^{(1)}(\omega)^{\prime\prime}  A_\alpha(z)e^{ik_\alpha z}\hat{e}_\alpha$$
+
+该项中 $e^{ik_\alpha z}\hat{e}_\alpha$ 会被挪到等式右侧去。而在化到定态耦合波方程的同时，还需要除以 $2ik_\alpha$, $$\frac{\omega_{\alpha}^{2}}{2ik_\alpha c^{2}} \chi^{(1)}(\omega)^{\prime\prime}  A_\alpha(z)=\frac{1}{2}\alpha_1 A_1(z)$$
+
+\end{proof}
+
+\begin{exercise}
+
+8.．证明群速度和群速度色散可由折射率的色散公式 （Sellmeier 公式）来求得，即
+\end{exercise}
+
+
+\begin{proof}
+$$
+k=\frac{\omega}{c} n(\omega)
+$$
+
+
+$$
+\begin{aligned} \frac{d k}{d w}=\frac{n(w)}{c}+& \frac{w}{c} \frac{d n(w)}{d w} \\ & \frac{w}{c} \frac{d n(\lambda)}{d \lambda} \frac{d \lambda}{d w} \end{aligned}
+$$
+
+$$
+\omega=\frac{2 \pi}{T}=\frac{2 \pi}{\lambda / c}=\frac{2 \pi c}{\lambda},\quad \frac{d \lambda}{d \omega}=-\frac{2 \pi c}{w^{2}}
+$$
+群速度倒数
+\begin{equation}
+\begin{aligned} \frac{d k}{d w} &=\frac{n(w)}{c}-2 \pi \frac{1}{w} \frac{d n(\lambda)}{d \lambda} \\ &=\frac{n(w)}{c}-\frac{1}{T} \frac{d n}{d \lambda}=\frac{n(w)}{c}-\frac{\lambda}{c} \frac{d n}{d \lambda} \end{aligned}
+\end{equation}
+
+群速度色散
+\begin{equation}
+\begin{aligned} \frac{d^{2} k}{d w^{2}} &=\frac{d n(\omega)}{d \omega} \frac{1}{c}+\frac{1}{c} \frac{d n}{d \omega}+\frac{\omega}{c} \frac{d^{2} n(\omega)}{d w^{2}} \\ &=\frac{2}{c} \frac{d n(\omega)}{d \omega}+\frac{\omega}{c} \frac{d^{2}(\lambda)}{d \lambda^{2}} \frac{d \lambda^{2}}{d \omega^2} \\ &=\frac{2}{c} \frac{d n(\lambda)}{d \lambda} \frac{d \lambda}{d \omega}+\frac{\omega}{c} \cdot \frac{4 \pi^{2} c^{2}}{\omega^{4}} \frac{d^{2} n(\lambda)}{d \lambda^{2}}=-\frac{4 \pi}{\omega^2} \frac{d n}{d \lambda}+\frac{4 \pi^{2} c}{\omega^{3}} \frac{d^{2} n}{d \lambda^{2}}\\ &=\frac{- \lambda^2}{\pi c^2} \frac{d n}{d \lambda}+\frac{\lambda^3}{2\pi c^2} \frac{d^{2} n}{d \lambda^{2}} \end{aligned}
+\end{equation}
+
+算出来比题目给的还要多一项，前面一项其实并没有被正负抵消掉。
+\end{proof}

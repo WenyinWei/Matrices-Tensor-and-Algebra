@@ -3,22 +3,9 @@
 \usepackage{NotesTeX,lipsum}
 %\usepackage{showframe}
 
-\usepackage{xcolor}
-\renewcommand{\emph}[1]{\textcolor{purple}{\textit{#1}}}
-% Too large line blank between neighboring lines.
-\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
-\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
-\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
-\usepackage{xeCJK}
-\setCJKmainfont[BoldFont=SimHei]{SimSun}
-\setCJKfamilyfont{hei}{SimHei}
-\setCJKfamilyfont{kai}{KaiTi}
-\setCJKfamilyfont{fang}{FangSong}
-\newcommand{\hei}{\CJKfamily{hei}}
-\newcommand{\kai}{\CJKfamily{kai}}
-\newcommand{\fang}{\CJKfamily{fang}}
+\input{WenyinSty.tex}
 
-\title{\begin{center}{\Huge \textit{Matrices, Tensor and Algebra}}\end{center}}
+\title{\begin{center}{\Huge \textit{Matrices, Tensor (NLO) and Algebra}}\end{center}}
 \author{Wenyin Wei\footnote{\href{https://wenyin.xyz/}{\textit{My Personal Website}}}}
 
 
@@ -41,8 +28,15 @@ Department of Engineering Physics
 	% \input{chapter/basic_intro_set.tex}
 	% \input{chapter/group_theory_1.tex}
 	\section{Assignment}
-	% \input{assignment/assignment1.tex}
-	\input{assignment/assignment2.tex}
+	% \input{assignment/Algebra_Assignment1.tex}
+	% \input{assignment/Algebra_Assignment2.tex}
+	% \input{assignment/Algebra_Assignment3.tex}
+	% \input{assignment/Algebra_Assignment4.tex}
+	% \input{assignment/Algebra_Assignment5.tex}
+	\input{assignment/Algebra_Assignment6.tex}
+	% NLO Nonlinear Optics
+	% \input{assignment/NLO_Assignment1.tex}
+	% \input{assignment/NLO_Assignment2.tex}
 
 
 

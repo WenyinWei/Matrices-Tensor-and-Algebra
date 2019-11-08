@@ -1,0 +1,105 @@
+\subsection{Assignment 4}
+
+\begin{exercise}
+    1.
+\end{exercise}
+
+\begin{proof}
+    \begin{enumerate}[(i)]
+        \item By the Cauchy's theorem, we know that if $G$ is a finite group and $p$ a prime dividing $|G|$. Then there exists $g\in G$ with $ord(g)=p$. Here, if $2| |G|$, then there must exists $g^2=e$, that means $g=g^{-1}$.
+        \item TODO
+        \item TODO
+        \item TODO
+    \end{enumerate}
+\end{proof}
+
+
+\begin{exercise}
+    2.
+\end{exercise}
+
+\begin{proof}
+    \begin{enumerate}[(i)]
+        \item In the finite case, set $|H|=k$ and $|G|=kn$. There are at most $n$ distinct conjugates. Since the identity element $e$ is in all of the conjugates, the union of the conjugates of $H$ has at most
+        $$n(k-1)+1=nk-n+1\; \text{element}$$
+        and since $H$ is a proper subgroup, it follows that
+        $$
+        \left|\bigcup_{g \in G} g H g^{-1}\right| \leq n k-(n-1)<n k=|G|
+        $$
+        so the union is still proper.
+        \item Here is a counterexample in the infinite index case, let $F$ be an algebraically closed field, let G be $\mathrm{GL}_n(F)$, and let H be the subgroup of upper triangular matrices. Since every matrix over an algebraically closed field is similar to an upper triangular matrix (\textit{e.g.}, the Jordan canonical form), it follows that the union of conjugates of $H$ equals the whole group, even though $H$ does not equal all of $G$.
+    \end{enumerate}
+\end{proof}
+
+% For a proof in the finite index case, let [G:H]=n. Then the action of G on the cosets H by left multiplication gives a homomorphism G→Sn with kernel K⊆H. This reduces to the finite case.
+
+\begin{exercise}
+    3.
+\end{exercise}
+
+\begin{proof}
+    \begin{enumerate}[(i)]
+        \item To prove that $G_x, G_y$ are conjugate subgroups, stabilizers are subgroups in $G$ based on current knowledge, we just need to prove there exists $h\in G$, such that $hG_xh^{-1}=G_y$.\\
+        $G$ acts transitively on $S$, then $\exists h\in G$, s.t. $hx=y$ and $h^{-1}y=x$. This is the $h$ that we want and we will prove this subsequently.
+
+        $$hG_xh^{-1}y=hG_x x=hx=y \Rightarrow hG_xh^{-1}\subset G_y $$
+        Similarly, we can prove that $G_x \supset h^{-1}G_y h$. By the two inequalities,  $G_x = h^{-1}G_y h$, so this is the conjugate relation.
+        \item According to \textit{Burnside's lemma} , the number of orbits (a natural number or +∞) is equal to the average number of points fixed by an element of $G$, denoted by $X^{g}=\{x \in X | g \cdot x=x\}$.
+        $$
+        |G \backslash S|=\frac{1}{|G|} \sum_{g \in G}\left|X^{g}\right|=1
+        $$
+
+        $$
+        \sum_{g \in G}\left|X^{g}\right|=|G|
+        $$
+
+        Because there exists $|X^g|$ more than one, while the sum items total number is $|G|$, there must exists some items $|X^g|=0$.
+
+
+    \end{enumerate}
+\end{proof}
+
+\begin{exercise}
+    4.
+\end{exercise}
+
+\begin{proof}
+    Based on the homomorphism fundamental theorem, we are able to point out that there exist a homomorphism $\phi: G \rightarrow S_3$ such that $\text{ker} \phi=\bigcap_{x\in G} xHx^{-1}$. According to the theorem, $$G/\ker \phi\cong\text{im} \phi \text{ and it causes } |\text{im} \phi|\in \{1,2,3,6\}$$ 
+    In the meantime, we have restricted the $\ker (\phi)=\bigcap_{x\in G} xHx^{-1} \subset eHe^{-1}=H$. $[G: H]=3$, while $\ker \phi$ is smaller than $H$, then $[G:\ker \phi] = |G/ \ker \phi|= |\text{im} \phi| \geq 3$. The result is $|\text{im} \phi|\in \{3,6\}$.\\
+    Now we have two cases:
+    \begin{enumerate}
+        \item $|\text{im} \phi|=6$, $G/ \ker \phi\cong\text{im} \phi\cong S_3$. However, note that $S_3$ has its normal subgroup $A_3$ of index 2. It is normal subgroup for $G/\ker \phi$, demonstrating that 3 left cosets of $\ker \phi$ consititute a normal subgroup in $G/\ker \phi$. The coset operation is based on the $G$ group operation, so the subgroup in $G/\ker \phi$ means $g$ in the 3 specified cosets construct a subgroup of index 2 in $G$, a contradiction.
+        \item $|\text{im} \phi|=3$ must be the right case because there is no other possibilities. 
+    \end{enumerate}
+    $|G/\ker \phi|=3$ and $\ker \phi \subset H$, therefore, $\ker \phi=H$ and $H$ is normal due to the definition $\text{ker} \phi=\bigcap_{x\in G} xHx^{-1}$.
+
+\end{proof}
+
+\begin{exercise}
+    5.
+\end{exercise}
+
+\begin{proof}
+    To be honest, I judge that the problem may be proposed wrongly, because if $G$ is abelian, then $\forall g,h\in G, gh=hg, g=hgh^{-1}$. Only one trivial conjugacy class exist and that is $G$. That means we don't really have as many as $k$ conjugacy classes.\\
+
+      However, elements in one conjugacy class commute with each other. This can be proved easily. Because in one conjugacy class, each two elements $g,h\in C_i$ has the conjugacy relation, $g=hgh^{-1}$.\\ 
+
+      With the conditions $g_ig_j=g_jg_i$, the most powerful condition would be that $\tau g_i\tau^{-1}$ commutes with $\tau g_j\tau^{-1}$, for all $\tau \in G$, \textit{i.e.}, each element in $C_i$ can find at least one commutable element in any other conjugacy classes.
+\end{proof}
+
+
+\begin{exercise}
+    6.
+\end{exercise}
+
+\begin{proof}
+
+    \begin{enumerate}[(i)]
+        \item  TODO
+        \item 
+         For $i=0$, $N_0=\{e\}$ is a normal subgroup of order $p^0$. 
+        
+        $G/N_i$ is a $p$-group, so it has a non-trivial centre $C(G/N_i)$. We construct a homomorphism and utilize the homomorphism fundamental theorem. $\pi^{-1}(C(G/N_i))$ is a subgroup of $G$, where $\pi:G\rightarrow G/N_i$ is the quotient map. $\pi^{-1}(C(G/N_i)) \triangleleft G$ because $\pi$ is a homomorphism. By applying \textit{Cauchy's theorem} on $C(G/N_i)$, we have the $\pi^{-1}(C(G/N_i))$ as $N_{i+1}$ with order $p^{i+1}$. Induction will give a complete normal series.
+    \end{enumerate}
+
+\end{proof}
