@@ -1,0 +1,97 @@
+\subsection{Nonlinear Optics Appendix}
+
+第三章，折射率随光强改变的效应
+
+\begin{exercise}
+
+1. 
+
+$n_0=1.6,\lambda = 1\mu m$,$ \chi_{sl}^{(3)}=2.66*10^{-20} (m/V)^2$
+
+求非线性折射率 $n_2$， 若光强为 $1MW/cm^2$，求折射率的增量 $\Delta n$.
+
+\end{exercise}
+
+\begin{proof}
+代入非线性折射率公式，
+$$n_2=\frac{3\mu_0 c}{4n_{10}^{2}} \chi_{sl}^{(3)}=2.94*10^{-18} W/m^2 $$
+$$\Delta n = n_2 I = 2.94*10^{-8} $$
+\end{proof}
+
+\begin{exercise}
+2.
+$$\tau \frac{d\Delta n}{dt}+\Delta n=n_2 I(t)$$    
+\end{exercise}
+
+\begin{proof}
+首先解出上述方程的齐次方程，解为 $e^{-t/\tau}$.
+然后令系数变为函数$$\tau \frac{d C(t)e^{-t/\tau}}{dt}+ C(t)e^{-t/\tau}=n_2I(t)$$
+解得前面的系数随时间变化$$C^\prime=e^{t/\tau}n_2I(t)/\tau $$
+\end{proof}
+
+
+\begin{exercise}
+3.
+\end{exercise}
+
+\begin{proof}
+$k^{NL}=\frac{3\omega_1}{8cn_1} \chi^{(3)} |A_1|^2$
+$$\Delta k_{3}= k_3-k_3^{P}=k_3-3k_1^P=k_3-3k_1-3k^{NL}$$
+
+相干长度 $L_c=\pi / \Delta k_{3}$
+\end{proof}
+
+\begin{exercise}
+4.
+\end{exercise}
+
+\begin{proof}
+从公式中可见，当 $\theta = \pi/4, 3\pi/4, -\pi/4, -3\pi/4$ 时取最大值。
+\end{proof}
+
+\begin{exercise}
+5. 
+\end{exercise}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{exercise}
+    6. 
+\end{exercise}
+
+\begin{proof}
+    $$
+    R=\frac{\left|A_{4}(0)\right|^{2}}{\left|A_{s}(0)\right|^{2}}=\tan ^{2}(|K| L)
+    $$
+    小 R 近似下，$
+    R\approx(|K| L)^2
+    $.
+
+    而$$
+K=\frac{3 \omega}{4 c n_{0}} \chi^{(3)} A_{1}(0) A_{2}(0)
+, 
+I=\frac{\mathrm{c} n \varepsilon_{0}}{2}|A|^{2}
+$$
+将 K 式中的振幅振幅替换为光强，可得
+$$
+\chi^{(3)}=\frac{2 \varepsilon_{0} c^{2} n_{0}^{2} \sqrt{R}}{3 \omega L \sqrt{I_{1} I_{2}}}
+$$
+\end{proof}
+    
+\begin{exercise}
+    7. 
+\end{exercise}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{exercise}
+8. 
+\end{exercise}
+
+\begin{proof}
+
+\end{proof}
