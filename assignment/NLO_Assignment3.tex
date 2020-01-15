@@ -1,17 +1,357 @@
-\subsection{Nonlinear Optics Appendix}
+\subsection{Nonlinear Optics Assignment 3}
 
-第三章，折射率岁光强改变的效应
+第二章,参量混频过程
 
 \begin{exercise}
 
 1. 
 
-$n_0=1.6,\lambda = 1\mu m$,$ \chi_{sl}^{(3)}=2.66*10^{-20} (m/V)^2$
+相位匹配时求转换效率.
+\end{exercise}
 
-求非线性折射率 $n_2$， 若光强为 $1MW/cm^2$，求折射率的增量 $\Delta n$.
+\begin{proof}
+$$I=\frac{Q}{\pi  r^2 t}= \SI{3.1831e-12}{W/m^2}$$
+电矢量幅值为
+$$A=\sqrt{ I \frac{ 2 \mu_0 c}{n}}=\SI{3.99862e7}{V/m}$$
+
+圆频率为 $\SI{1.77035e15}{rad/s}$, 代入式 (27) 可得
+$$
+l_{s h}=\frac{2 c n_{1}}{\omega_{1} \chi_{e f f}^{(2)}\left|A_{1}(0)\right|}
+$$
+求得特征长度为 \SI{0.0169399}{m} = \SI{1.69399}{cm}.
+
+代入式 (28) 式可得转换效率
+$$
+\eta_{S H G}=\frac{I_{2}(L)}{I_{1}(0)}=\tanh ^{2}\left(\frac{L}{l_{s h}}\right)=68.5011 \%
+$$
+
+\end{proof}
+
+\begin{exercise}
+
+2. 3. 两问类似,同时计算.
+
+求 I 类, II 类相位匹配角.
+\end{exercise}
+
+\begin{proof}
+
+由折射率面图的对称性我们知道,如果有解,则由于对称性和互补共有四个解.
+
+$$
+n_{e}\left(2 \omega, \theta_{p}\right)=\frac{n_{o}(2 \omega) n_{e}(2 \omega)}{\left[n_{e}^{2}(2 \omega) \cos ^{2} \theta_{p}+n_{o}^{2}(2 \omega) \sin ^{2} \theta_{p}\right]^{1 / 2}}
+$$
+
+I 类匹配, 对负单轴晶体 $oo\rightarrow e$,
+
+$$
+n_{o}(\omega)=n_{e}\left(2 \omega ; \theta_{P}\right)
+$$
+
+\begin{itemize}
+    \item 红宝石激光, \pm 52.8579\degree, \pm 127.142\degree
+    \item Nd:YAG 激光, \pm 43.6659\degree, \pm 138.334 \degree
+\end{itemize}
+
+
+II 类匹配,对负单轴晶体 $oe\rightarrow e$,
+
+$$
+\frac{1}{2}\left[n_{o}(\omega)+n_{e}\left(\omega ; \theta_{P}\right)\right]=n_{e}\left(2 \omega, \theta_{P}\right)
+$$
+
+\begin{itemize}
+    \item 红宝石激光, 找不到实数解
+    \item Nd:YAG 激光, \pm 60.0824\degree, \pm 119.918\degree
+\end{itemize}
+
+\end{proof}
+
+
+\begin{exercise}
+
+4. 
+
+求 I 类, II 类相位匹配下的 $d_{eff}^{(2)}$. $\phi$ 取何值时, 
+$d_{eff}^{(2)}$ 的绝对值最大? 能不能做温度匹配?
 
 \end{exercise}
 
 \begin{proof}
 
+$oo\rightarrow e$, I 类匹配
+
+$$
+\begin{aligned}
+&\Tens{d}=\left(\begin{array}{cccccc}
+{0} & {0} & {0} & {0} & {d_{15}}&{ d_{16}} \\
+{d_{16}} & {-d_{16}} & {0} & {d_{15}} & {0} & {0} \\
+{d_{31}} & {d_{31}} & {d_{33}} & {0} & {0} &{0}
+\end{array}\right)\\
+&\hat{e}_o=\left(\begin{array}{cc}
+{\sin \varphi} \\
+{-\cos \varphi} \\
+{0}
+\end{array}\right) \quad \hat{e}_{e}=\begin{array}{c}
+{\left(\begin{array}{c}
+{-\cos \theta \cos \varphi} \\
+{-\cos \theta \sin \varphi} \\
+{\sin \theta}
+\end{array}\right)}
+\end{array}
+\end{aligned}
+$$
+$$
+\Vect{f}=\left(\begin{array}{c}
+{\sin ^{2} \varphi} \\
+{\cos ^{2} \varphi} \\
+{0} \\
+{0} \\
+{-2 \sin \varphi \cos \varphi}
+\end{array}\right)
+$$
+
+$$
+\begin{aligned}
+d_{e f f}^{(2)} &=\frac{1}{2} \chi_{e f f}^{(2)}=\hat{e}_{e} \cdot \Tens{d} \cdot \Vect{f} \\
+&=d_{15} \times 0 \\
+&+d_{16}(-\cos\theta \cos \varphi \cdot(-2) \sin \varphi \cos\varphi) \\
+&-d_{16}\left(-\cos \theta \sin \varphi \cdot \sin ^{2} \varphi\right) \\
+&+d_{31}\left(\sin \theta \cdot \sin ^{2} \varphi\right) \\
+&+d_{31}\left(\sin \theta \cdot \cos ^{2} \varphi\right) \\
+&= d_{16}  \cos \theta \sin \varphi(\sin 2 \varphi+\cos 2 \varphi)+d_{31} \sin \theta
+\end{aligned}
+$$
+
+
+$oo\rightarrow e$, II 类匹配
+
+$$
+\Vect{f}=\left(\begin{array}{c}
+{-\cos \theta \sin \varphi \cos \varphi} \\
+{\cos \theta \sin \varphi \cos \varphi} \\
+{0} \\
+{\sin \theta \sin \varphi} \\
+{\sin \theta \sin \varphi} \\
+{\cos \theta \cos 2 \varphi}
+\end{array}\right)=\left(\begin{array}{c}
+{-\frac{1}{2} \cos \theta \sin 2 \varphi} \\
+{\frac{1}{2} \cos \theta \sin \varphi} \\ 
+0\\
+{-\sin \theta \cos \varphi} \\
+{\sin \theta \sin \varphi} \\
+{\cos \theta \cos 2 \varphi}
+\end{array}\right)
+$$
+
+\[
+\begin{aligned}
+d_{e f f}^{(2)}=\hat{e}_{e}& \cdot \Tens{d} \cdot \Vect{f}\\
+=d_{15}&(-\cos \theta \cos \varphi \sin \theta \sin \varphi \\
+-& \cos \theta \sin \varphi(-\sin \theta \cos \varphi)) \\
++ d_{16}&\left(-\cos \theta \cos \varphi \cos \theta \cos 2 \varphi\right. \\
+&-\cos \theta \sin \varphi\left(-\frac{1}{2} \cos \theta \sin 2 \varphi\right) \\
+&+\cos \theta \sin \varphi\left(\frac{1}{2} \cos \theta \sin 2 \varphi\right) ) \\
++ d_{31}&\left(\sin \theta\left(-\frac{1}{2} \cos \theta \sin \alpha\right)+\sin \theta\left(\frac{1}{2} \cos \theta \sin 2 \theta\right)\right) \\
+= d_{16}& \cos^2 \theta \cos \varphi(1-2 \cos 2 \varphi)
+\end{aligned}
+\]
+
+I 类匹配可以温度匹配, II 类匹配不可以, II 类在晶体主轴和光的传播方向垂直时有效二阶极化率为零.
+\end{proof}
+
+\begin{exercise}
+
+5. (Optional)
+
+分别推导负﹑正单轴晶体二次谐波发生的容许角宽 和容许温度范围 的公式. 
+\end{exercise}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{exercise}
+
+6. 
+
+已知 $\omega_1$ 为强泵浦光, $\omega_2$ 为弱光,在泵浦光近似无衰减并满足相位匹配条件下,求和频波的光强公式,解释它在空间周期性变化的原因.
+\end{exercise}
+
+\begin{proof}
+
+在强泵浦光近似无衰减的假设下,耦合波方程可以简化为:
+
+$$
+\begin{aligned}
+&\frac{d A_{3}}{d z}=\frac{i w_{3}}{2 c n_{3}} \chi_{eff}^{(2)}\left(-w_{3} ; w_{1}, w_{2}\right) A_{1}(z) A_{2}(z)=i K_{1} A_{2}(z),\quad 
+K_1=\frac{ w_{3}}{2 c n_{3}} \chi_{eff}^{(2)}\left(-w_{3} ; w_{1}, w_{2}\right) A_{1}(0)\\
+&\frac{d A_2}{d z}=\frac{i \omega_{2}}{2 c n_{2}} \chi_{eff}^{(2)}\left(-\omega_{2} ; \omega_{3},-\omega_{1}\right) A_{3}(z) A_{1}^{*}(z)=i K_{2} A_{3}(z),\quad
+K_2=\frac{ \omega_{2}}{2 c n_{2}} \chi_{eff}^{(2)}\left(-\omega_{2} ; \omega_{3},-\omega_{1}\right)  A_{1}^{*}(0)
+\end{aligned}
+$$
+
+解微分方程得到 $\omega_2$, $\omega_3$ 两束光电矢量随着光路延伸的变化趋势.
+$$
+\begin{aligned}
+&A_{2}(z)=\frac{1}{2} A_{2}(0)\left(e^{-i \sqrt{K_{1} K_{2}} z}+e^{i \sqrt{K_1 K_2}  z}\right)=A_{2}(0) \cosh (i \sqrt{K_1 K_{2} }z)\\
+&A_{3}(z)=\frac{1}{2} \sqrt{\frac{K_{1}}{K_{2}}} A_{2}(0)  \left(-e^{-i \sqrt{K_{1} K_{2} }z}+e^{i \sqrt{K_{1} K_{2} }z}\right)=A_{2}(0) \sqrt{\frac{K_{1}}{K_{2}}} \sinh (i \sqrt{K_{1} K_{2} }z)
+\end{aligned}
+$$
+用电矢量求光强度的变化趋势 $I_3$,
+$$
+\begin{aligned}
+\frac{d I_{3}}{d z}&=\frac{\omega_{3}}{2 \mu_{0} c^{2}} \chi_{e ff}^{(2)} \frac{1}{2 i}\left[A_{3} A_{2}^{*} A_{1}^{*}-A_{3}^{*} A_{2} A_{1}\right]
+&=\frac{1}{4}\left|A_{2} (0)\right|^{2} \sqrt{\frac{K_1}{K_{2}}}Im \left(e^{2 i \sqrt{K_{1} K_{2}} z}-e^{-2 i \sqrt{K_{1} K_{2}} z}\right)\\
+&=\frac{1}{4}\left|A_{2}(0)\right|^{2} \sqrt{\frac{K_{1}}{K_{2}}} 2 \sin (2 \sqrt{K_{1} K_{2} z})\\
+&=\frac{1}{2}\left|A_{2}(0)\right|^{2} \sqrt{\frac{K_{1}}{K_{2}}} \sin (2 \sqrt{K_1 K_{2}} z)
+\end{aligned}
+$$
+
+光强变化的趋势其实可以从微分方程中看出来,如果 $A_2$ 是正实数 $\propto e^{i\theta}$, 
+$dA_3/dz$ 的变化就正比于 $\propto e^{i(\theta+\pi/2)}$, $A_3$ 的这一部分增长量放过来又作用于 $dA_2/dz$, $dA_2 \propto e^{i(\theta + \pi)}$. 
+这就和原来的 $A_2$ 方向相反了.类似的振荡变化趋势也可以在差频发生的 $\Gamma_0 \leq \Delta k/2$ 的情形下找到.
+\end{proof}
+
+\begin{exercise}
+
+7. 
+
+为负单轴晶体属于3m晶类,在Ⅰ类温度匹配下,泵浦光 ，信号光 ,晶体长 ,   , .求信号光参量放大的增益系数.三种波长的折射率近似都取n=2.3
+\end{exercise}
+
+\begin{proof}
+
+首先由能量守恒得到另外一个差频波的波长 $\omega_3=\frac{2\pi c}{\lambda_3}=\omega_1+\omega_2$,
+$$\omega_2= \SI{2132.64}{nm}$$
+
+由光强公式得到电矢量幅值 $A_3(0)=\SI{1.27983e6}{V/m}$
+
+$$
+I=\frac{n}{2 \mu_0  c} |A|^{2}
+$$
+
+由第四题的问题可知在温度匹配时的有效二阶极化率
+$$\chi_{eff}^{(2)}=2d_{31}=\SI{11.2e-12}{m/V}$$
+
+
+
+$$
+\begin{aligned}
+\Gamma_{o}^{2}&=K_{1} K_{2}^{*}=\frac{\omega_{1} \omega_{2}}{4 c^{2} n_{1} n_{2}}\left(\chi_{e f f}^{(2)}\right)^{2}\left|A_{3}(0)\right|^{2}\\
+&=\frac{ \omega \left(\SI{632.8}{nm}\right) \omega (\SI{2132.64}{nm})}{4  c^2 * 2.3^2}\left(\SI{5.6e-12}{m/V}\right)^2 \left(\SI{1.27983e6}{V/m}\right)^2\\
+&=\SI{284.054}{m^{-2}}
+\end{aligned}$$
+$$
+G_{max}=\sinh^2 (\Gamma_0 L)=\sinh^2 (\SI{16.8539}{m^{-1}} L)=0.0286753=2.86753\%$$
+\end{proof}
+
+\begin{exercise}
+
+8. (Optional)
+
+推导负单轴晶体OPO 角度调谐和温度调谐公式..分Ⅰ类匹配和Ⅱ类匹配两种情形讨论.
+\end{exercise}
+
+\begin{proof}
+
+\end{proof}
+
+
+
+\begin{exercise}
+
+9. 
+
+参考铁电晶体 LiNbO3 的 Sellmeier 公式,计算用它的电畴周期性反转实现SHG准相位匹配的反转周期. 已知输入光是Nd:YAG 激光,波长是λ=1.064μm
+\end{exercise}
+
+\begin{proof}
+$$
+\begin{aligned}
+\Lambda &=2 L_{c}=\frac{2\pi}{\Delta k}=\frac{2 \pi}{k_{2}-2 k_{1}}=\frac{2 \pi \mathrm{c}}{n_{2} w_{2}-2 n_{1} w_{1}} \\
+&=\text{I 类匹配 }\frac{2 \pi c}{2 \omega_1 \left(n_{2e}-n_{1o}\right)}=\text{II类匹配 } \frac{2 \pi c}{2 \omega_1 \left(n_{2e}-n_{1e}/2-n_{1o}/2\right)}
+\end{aligned}
+$$
+根据附录知 LiNbO3 为负单轴晶体,虽然准相位匹配已经不要求 I 类匹配只能是 $oo\rightarrow e$, 
+II 类匹配只能是 $oe\rightarrow e$, 但这里我们还是拿它们做计算例子.
+
+准相位匹配时,光轴与光的传播方向垂直,$\theta_p=90^\circ$.
+$$
+\begin{aligned}
+\Lambda &=\text{I 类匹配 }\frac{2 \pi c}{2 \omega_1 \left(n_{2e}-n_{1o}\right)}=\frac{2 \pi c}{2 \omega_1 \left(2.23-2.23\right)}\\
+&=\text{II类匹配 } \frac{2 \pi c}{2 \omega_1 \left(n_{2e}-n_{1e}/2-n_{1o}/2\right)}=\frac{2 \pi c}{2 \omega_1 \left(2.23-2.16/2-2.23/2 \right)}=\SI{21.4286}{\micro m}
+\end{aligned}
+$$
+
+上式表明, I 类匹配的情况下不需要准相位匹配, II 类匹配的情况下则需要反转周期 \SI{21.4286}{\micro m}
+\end{proof}
+
+\begin{exercise}
+
+10. 
+
+由上题,计算电畴周期性反转实现OPO准相位匹配的反转周期. 泵浦光同上,要求信号光波长是λ=1.5μm. (提示: 先算出闲置光波长)
+\end{exercise}
+
+\begin{proof}
+首先由能量守恒 $\omega_3=\omega_1+\omega_2$ 可以算出 $\lambda_2=\SI{3.66055}{\micro m}$,
+
+依照上题流程
+
+$$
+\begin{aligned}
+\Lambda &=2 L_{c}=\frac{2\pi}{\Delta k}=\frac{2 \pi}{k_{3}- k_{1}-k_{2}}
+=\frac{2 \pi \mathrm{c}}{n_{3} \omega_{3}- n_{1} \omega_{1}-n_2\omega_2} \\
+&=\text{I 类匹配 }\frac{2 \pi c}{2 \omega_1 \left(n_{3e}-n_{1o}/2-n_{2o}\right)}
+\end{aligned}
+$$
+
+这里我们取 $oo\rightarrow e$, 不做角度调谐直接令 $\theta_p=90^\circ$, \SI{25}{\celsius} 作一个例子
+
+$$
+\begin{aligned}
+\Lambda &=2 L_{c}=\frac{2\pi}{\Delta k}=\frac{2 \pi}{k_{3}- k_{1}-k_{2}}
+=\frac{2 \pi \mathrm{c}}{n_{3} \omega_{3}- n_{1} \omega_{1}-n_2\omega_2} \\
+&=\frac{2 \pi \mathrm{c}}{2.16*5.14659*10^{14} - 2.32926* 1.25577*10^{15}-2.32926*5.14659*10^{14}} \\
+&=\SI{-6.28249}{\micro m}
+\end{aligned}
+$$
+
+即需要反转周期为 \SI{6.28249}{\micro m} 的准相位匹配晶体.
+\end{proof}
+
+\begin{exercise}
+
+11. (Optional)
+
+证明,对于二次谐波发生 ，准相位匹配时输入光的允许(临界)线宽比同一介质用常规相位匹配的允许线宽要小很多.
+\end{exercise}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{exercise}
+
+12. 
+
+以负单轴晶体作二次谐波发生，计算在 I 类匹配时激光的临界线宽 $\Delta \lambda_c$ 公式，
+证明此式等价于群速度匹配条件（§2.2.5 （2）式）
+\end{exercise}
+
+\begin{proof}
+
+$$
+\begin{aligned}
+L\cdot \Delta \omega \leq& \frac{0.886 \pi}{ \frac{d(\Delta k)}{d\omega}|_{\omega_1}}\\
+=&\frac{0.886 \pi}{\left.\frac{d}{d \omega}\right|_{\omega_{1}}\left[\frac{n_{e}(2 \omega, \theta) \cdot 2 \omega}{c}-\frac{n_{0}(\omega, \theta) \cdot 2 \omega}{c}\right]}\\
+=&\frac{0.886 \pi}{\left.\frac{d}{d w}\right|_{w_{1}}\left[k_{e,\theta}\left(2w\right)-2 k_{o}(w)\right]}=\frac{0.886 \pi}{2 \frac{d k_{e, s}(2 w)}{d(2 w)}-2 \frac{d{k_{o}(w)}}{d w}}\\=-0 
+=&\frac{0.886 \pi}{2 \frac{1}{v_{e, \theta}(2 \omega)}-2 \frac{1}{v_{o}(\omega)}} \approx \frac{1}{\frac{1}{v_{2}}-\frac{1}{v_{1}}}
+\end{aligned}$$
+
+用上激光脉冲频带宽度和脉冲宽度的关系 $\Delta t \cdot \Delta \omega\approx 1$.
+$$
+\Delta t_{L} \geqslant L\left|\frac{1}{v_2}-\frac{1}{v_{1}}\right|
+$$
 \end{proof}

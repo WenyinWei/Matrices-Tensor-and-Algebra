@@ -1,0 +1,133 @@
+\subsection{Nonlinear Optics Assignment 5}
+
+第五章，光的受激散射
+\begin{exercise}
+    1.
+\end{exercise}
+
+\begin{proof}
+    $$\pm(\frac{1}{\lambda }-\frac{1}{\lambda_0})=4155*10^{-7} $$
+    如果求波长为 $\lambda$ 光的斯托克斯光上式中用 - 号，如果求反斯托克斯光则用 + 号。依次可求得
+    \begin{itemize}
+        \item 一级斯托克斯光：\SI{612.115}{nm}
+        \item 二级斯托克斯光：\SI{820.897}{nm}
+        \item 一级反斯托克斯光：\SI{405.732}{nm}
+        \item 二级反斯托克斯光：\SI{347.2}{nm}
+    \end{itemize}
+\end{proof}
+
+\begin{exercise}
+    2.
+\end{exercise}
+
+\begin{proof}
+    产生反斯托克斯光的过程得依靠于四波混频,而其对应的相位匹配条件为
+    $$\Delta\Vect{ k}=2\Vect{k}_P -\Vect{k}_S -\Vect{k}_A=\Vect{0}$$
+
+    共线即为 
+$$
+\begin{aligned}
+        &2k_P -k_S -k_A\\
+        =&(2n_P\omega_P-n_S\omega_S-n_A\omega_A)/c=0
+    \end{aligned}$$
+令 $\omega_S=\omega_P-\Omega, \omega_A=\omega_P +\Omega$,
+$$(2n_P-n_S-n_A)\omega_P+(n_S-n_A)\Omega=0,$$
+我们可以认为 $\Omega$ 相对于泵浦光能量较低,是个对 $\omega_P$ 的小扰动,这样就可以将
+公式中的一些因子看成差分形式
+$$\begin{aligned}
+    2n_P-n_S-n_A \approx \Omega^2 \frac{d^2 n}{d\omega^2}(\omega_P)\\
+    n_S-n_A \approx -2\Omega \frac{dn}{d\omega}(\omega_P)
+\end{aligned}$$
+代入原公式后得到
+$$ \frac{d^2 n}{d\omega^2}(\omega_P)=2\frac{dn}{d\omega}(\omega_P) / \omega_P$$
+实际上如果泵浦光的频率 $\omega_P$ 不能动,之后能够给实验调节用来相位匹配的参量只有温度一个了,
+能不能匹配上要看运气,不如直接用非共线做相位匹配.
+
+
+非共线的角度调谐公式可依照余弦公式,
+$$\begin{aligned}
+\cos\theta =& \frac{(2n_P\omega_P)^2+(n_S\omega_S)^2-(n_A\omega_A)^2}{2(2n_P\omega_P)n_S\omega_S}\\
+=&\frac{(2n_P\omega_P)^2+(n_S\omega_S)^2-(n_A(2\omega_P-\omega_S))^2}{2(2n_P\omega_P)n_S\omega_S}\\
+=&\frac{4 \omega_{P} \omega_{S} n_{A}^{2}-4 \omega_{P}^{2}\left(n_{A}^{2}-n_{P}^{2}\right)-\omega_{S}^{2}\left(n_{A}^{2}-n_{S}^{2}\right)}{4 \omega_{P} \omega_{S} n_{P} n_{S}}\end{aligned}$$
+
+其实我更倾向于不将 $\omega_A$ 拆开,那样公式会清晰得多.
+
+
+求解具体的锥角,先求各级激光的波长和角频率.斯托克斯,泵浦光和反斯托克斯光的 $1/\lambda$ 构成等差数列,
+以此求得波长分别为  \SI{765.814}{nm}, \SI{694.3}{nm}, \SI{635.0}{nm}, 角频率分别为 $2.45967\times 10^{15},2.71302\times 10^{15},2.96638\times 10^{15}$ rad/s.
+
+$$\begin{aligned}
+    \cos\theta =& \frac{(2n_P\omega_P)^2+(n_S\omega_S)^2-(n_A\omega_A)^2}{2(2n_P\omega_P)n_S\omega_S}\\
+    =& \frac{(2/\lambda_P)^2+(1/\lambda_S)^2-(1/\lambda_A)^2}{4/\lambda_P\lambda_S}\\
+    =& 0.999273
+ \end{aligned}
+ \Rightarrow \theta = 0.0381262 rad = 2.18447^\circ$$
+
+\end{proof}
+
+\begin{exercise}
+    3.
+\end{exercise}
+
+\begin{proof}
+    拉曼散射涉及到的双光子差频共振跃迁，其跃迁概率 $R_{kg}^{(2)}$ 与泵浦光强和斯托克斯光强成正比，
+    或者说其因子含有他们模体积内的平均光子数。在逆拉曼效应中， $\omega_L$ 的激光作为斯托克斯光,
+    $\omega$ 光作为受激拉曼散射的源, $\omega_L$ 光的光强高,提高跃迁概率.以至于在光谱中出现吸收线.
+    
+    逆拉曼效应扩展了拉曼效应的应用范围,检测吸收光光谱而不是散射光光谱更加方便.由于调谐的是弱光,强光不需要太多改动,
+    而且反应体积计算比单一泵浦光的更加简单.由于是吸收,所以也不用计算散射角相关的几何因子.
+\end{proof}
+
+\begin{exercise}
+    4.(Optional)
+\end{exercise}
+
+\begin{exercise}
+    5.
+\end{exercise}
+
+\begin{proof}
+    布里渊散射过程中可以看为一个泵浦光光子湮灭生成一个声子和散射光子.
+    $$\Vect{q}=\Vect{k_p}-\Vect{k_s} \qquad \Omega_B = \omega_p - \omega_s $$
+    实际上经过散射,光子能量的变化是非常微小的,即 $k_p \approx k_s$,
+    $$\Omega_B = v_a |\Vect{q}| \approx v_a \cdot 2 k_p \sin(\theta/2)
+    = v_a \frac{2n \sin(\theta/2)}{c}$$,这就是公式中出现的声波频率.
+\end{proof}
+
+\begin{exercise}
+    6.
+\end{exercise}
+
+\begin{proof}
+
+虽然题目没有指明是否是背向散射的情况,我们这里直接用背向散射作为例子.由受激布里渊散射的方程可知平面单色波解,根据 (15) 式,
+
+$$
+\Delta \rho=\frac{1}{2} \Delta \rho_{m}(\vec{r}, t) e^{-i(\Omega t-\bar{q} \cdot \bar{r})}+c . c .
+$$
+
+其幅值受泵浦光和信号光影响
+$$
+\begin{aligned}
+\Delta \rho_{m}=\frac{\varepsilon_{0} \gamma_{o} q^{2}}{2} \frac{A_{1} A_{2}^{*}}{\left(\Omega_{B}^{2}-\Omega^{2}-i \Gamma_{B} \Omega\right)}\\
+\Omega = \omega_1-\omega_2,\quad \Vect{q}=\Vect{k}_1-\Vect{k}_2,\quad \Gamma_B=q^2\Gamma^\prime=\tau^{-1}_B=\SI{2.5e8}{s^{-1}}
+\end{aligned}$$
+
+这里泵浦光和信号光方向与书上相同,则声波波矢 $\Vect{q} = \Vect{k}_1-\Vect{k}_2=n\omega_1/c-(-n\omega_2/c)=\SI{2.09858e7}{rad/m}$.
+
+声波圆频率 $\Omega_B= vq=\SI{1.1e3}{m/s}*q=\SI{2.30844e10}{rad/s}$
+
+小信号近似下求解 $g_B$ 因子,在共振情况下 ($\Omega_B=\Omega$) 事实上有 $g_B=g_0$:
+$$
+g_{B}=g_{0} \frac{\left(\Gamma_{B} / 2\right)^{2}}{\left(\Omega_{B}-\Omega\right)^{2}+\left(\Gamma_{B} / 2\right)^{2}}
+$$
+$$
+g_{0}=\frac{\gamma_{e}^{2} q^{2} \omega_{1}}{2 c^{2} n_{1} n_{2} \rho_{0} \Omega_{B} \Gamma_{B}}=\frac{\gamma_{e}^{2} \omega_{1}^{2}}{c^{3} n_{1} \rho_{0} v \Gamma_{B}}>0
+$$
+$$
+\gamma_{e}=\frac{\left(n^{2}-1\right)\left(n^{2}+2\right)}{3}=2.85562
+$$
+上述数值都代入得到 $g_B=\SI{1.85575e-9}{(W/m^2).m}=\SI{1.85575e-9}{W/m}$.这个因子乍看上去似乎过小了,但这实际上是因为它是有量纲的,
+一般用到的激光都是在 \SI{1.0e9}{W/m^2} 以上,所以 $g_B$ 因子这个量级还是很可观的.
+
+\end{proof}
